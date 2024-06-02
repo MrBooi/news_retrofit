@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:news_retrofit/features/daily_news/domain/entities/article_entity.dart';
 import 'package:news_retrofit/features/daily_news/presentation/widgets/article_title.dart';
 
@@ -42,6 +43,7 @@ class DailyNews extends StatelessWidget {
           return const Center(child: CupertinoActivityIndicator());
         }
         if (state is RemoteArticlesError) {
+          print(state.error);
           return const Center(child: Icon(Icons.refresh));
         }
         if (state is RemoteArticlesDone) {
@@ -62,10 +64,10 @@ class DailyNews extends StatelessWidget {
   }
 
   void _onArticlePressed(BuildContext context, ArticleEntity article) {
-    // TODO go router navigation to ArticleDetails
+    context.pushNamed('articleDetails');
   }
 
   void _onShowSavedArticlesViewTapped(BuildContext context) {
-    // TODO go router navigation to SavedArticles
+    context.pushNamed('savedArticles');
   }
 }
