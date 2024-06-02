@@ -43,7 +43,6 @@ class DailyNews extends StatelessWidget {
           return const Center(child: CupertinoActivityIndicator());
         }
         if (state is RemoteArticlesError) {
-          print(state.error);
           return const Center(child: Icon(Icons.refresh));
         }
         if (state is RemoteArticlesDone) {
