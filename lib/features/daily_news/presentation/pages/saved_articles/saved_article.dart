@@ -81,6 +81,6 @@ class SavedArticles extends HookWidget {
   }
 
   void _onArticlePressed(BuildContext context, ArticleEntity article) {
-    context.pushNamed('articleDetails');
+    context.pushNamed('articleDetails', extra: article);
   }
 }
