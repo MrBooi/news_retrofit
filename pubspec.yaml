@@ -38,6 +38,8 @@ dependencies:
 
   # routing
   go_router: ^14.1.4
+  # networking
+  dio: ^5.4.3+1
 
 dev_dependencies:
   flutter_test:
